@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neuralif - AI-Native Data Intelligence Platform</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Neuralif - AI-Native Data Intelligence Platform</title>
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -764,12 +765,7 @@
                 height: 150px;
             }
 
-            .video-container {
-                max-width: 90%;
-                width: 400px;
-                height: 600px;
-                margin: 0 auto;
-            }
+            
 
             .video-caption {
                 font-size: 1rem;
@@ -845,201 +841,205 @@
             opacity: 0;
             animation: slideUp 0.6s ease forwards;
         }
-    </style>
+    
+
+.video-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-container {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <a href="#home" class="logo">Neuralif</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#products">Products</a></li>
-                <li><a href="#video">Video</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Neuralif</h1>
-                <p class="tagline">AI-Native Data Intelligence Platform</p>
-                <p class="description">
+<!-- Navigation -->
+<nav>
+<div class="container">
+<a class="logo" href="#home">Neuralif</a>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#video">Video</a></li>
+<li><a href="#team">Team</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content">
+<h1>Neuralif</h1>
+<p class="tagline">AI-Native Data Intelligence Platform</p>
+<p class="description">
                     Pioneering the next frontier of autonomous business intelligence through advanced neural networks 
                     and machine learning. Transform your data ecosystem into a competitive advantage.
                 </p>
-                <div class="cta-buttons">
-                    <a href="#products" class="cta-button cta-primary">Discover Our Offerings</a>
-                    <a href="#contact" class="cta-button cta-secondary">Request Product Demo</a>
-                    <a href="#team" class="cta-button cta-secondary">Meet the Team</a>
-                </div>
-            </div>
-            <div class="back-to-top-section">
-                <a href="#home" class="back-to-top">↑ Back to Top</a>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Products Section -->
-    <section id="products" class="section-darker">
-        <div class="container">
-            <h2>Our Products</h2>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🔮</div>
-                    <h3>Product Name 1</h3>
-                    <p>Product description will go here. This will be updated with your specific content later.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🌐</div>
-                    <h3>Product Name 2</h3>
-                    <p>Product description will go here. This will be updated with your specific content later.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🚀</div>
-                    <h3>Product Name 3</h3>
-                    <p>Product description will go here. This will be updated with your specific content later.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚡</div>
-                    <h3>Product Name 4</h3>
-                    <p>Product description will go here. This will be updated with your specific content later.</p>
-                </div>
-            </div>
-
-            <div class="back-to-top-section">
-                <a href="#home" class="back-to-top">↑ Back to Top</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section id="video" class="section-dark">
-        <div class="container">
-            <h2>Why Choose Neuralif</h2>
-            <div class="video-section">
-                <div class="video-container">
-                    <iframe 
-                        src="https://www.youtube.com/embed/1kx17Ae66Kg" 
-                        title="Neuralif Product Overview" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <p class="video-caption">Discover how Neuralif transforms data into intelligent insights</p>
-            </div>
-            <div class="back-to-top-section">
-                <a href="#home" class="back-to-top">↑ Back to Top</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Team Section -->
-    <section id="team" class="section-dark">
-        <div class="container">
-            <h2>Meet Our Founders</h2>
-            <div class="team-grid">
-                <div class="team-card">
-                    <div class="team-photo">
-                        <img src="https://via.placeholder.com/300x300/1a1a1a/00d4ff?text=KA" alt="Kanak Agrawal" />
-                    </div>
-                    <div class="team-info">
-                        <h3>Kanak Agrawal</h3>
-                        <p class="team-title">Co-Founder & CEO</p>
-                        <p class="team-description">
+<div class="cta-buttons">
+<a class="cta-button cta-primary" href="#video">Why Choose Neuralif</a><a class="cta-button cta-primary" href="#products">Discover Our Offerings</a>
+<a class="cta-button cta-primary" href="#contact">Request Product Demo</a>
+<a class="cta-button cta-primary" href="#team">Meet the Team</a>
+</div>
+</div>
+<div class="back-to-top-section">
+<a class="back-to-top" href="#home">↑ Back to Top</a>
+</div>
+</div>
+</section>
+<!-- Products Section -->
+<section class="section-dark" id="video">
+<div class="container">
+<h2>Why Choose Neuralif</h2>
+<div class="video-section">
+<div class="video-container">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/1kx17Ae66Kg" title="Neuralif Product Overview">
+</iframe>
+</div>
+<p class="video-caption">Discover how Neuralif transforms data into intelligent insights</p>
+</div>
+<div class="back-to-top-section">
+<a class="back-to-top" href="#home">↑ Back to Top</a>
+</div>
+</div>
+</section><section class="section-darker" id="products">
+<div class="container">
+<h2>Our Products</h2>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">🔮</div>
+<h3>Product Name 1</h3>
+<p>Product description will go here. This will be updated with your specific content later.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🌐</div>
+<h3>Product Name 2</h3>
+<p>Product description will go here. This will be updated with your specific content later.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🚀</div>
+<h3>Product Name 3</h3>
+<p>Product description will go here. This will be updated with your specific content later.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">⚡</div>
+<h3>Product Name 4</h3>
+<p>Product description will go here. This will be updated with your specific content later.</p>
+</div>
+</div>
+<div class="back-to-top-section">
+<a class="back-to-top" href="#home">↑ Back to Top</a>
+</div>
+</div>
+</section>
+<!-- Video Section -->
+<!-- Team Section -->
+<section class="section-dark" id="team">
+<div class="container">
+<h2>Meet Our Founders</h2>
+<div class="team-grid">
+<div class="team-card">
+<div class="team-photo">
+<img alt="Kanak Agrawal" src="https://via.placeholder.com/300x300/1a1a1a/00d4ff?text=KA"/>
+</div>
+<div class="team-info">
+<h3>Kanak Agrawal</h3>
+<p class="team-title">Co-Founder &amp; CEO</p>
+<p class="team-description">
                             Visionary leader with extensive experience in AI and machine learning. Kanak has pioneered 
                             breakthrough approaches in neural data processing and autonomous intelligence systems. 
                             Previously led AI initiatives at Fortune 500 companies, bringing deep expertise in 
                             enterprise-scale data transformation.
                         </p>
-                    </div>
-                </div>
-                <div class="team-card">
-                    <div class="team-photo">
-                        <img src="https://via.placeholder.com/300x300/1a1a1a/0077ff?text=CF" alt="Co-Founder" />
-                    </div>
-                    <div class="team-info">
-                        <h3>Co-Founder Name</h3>
-                        <p class="team-title">Co-Founder & CTO</p>
-                        <p class="team-description">
+</div>
+</div>
+<div class="team-card">
+<div class="team-photo">
+<img alt="Co-Founder" src="https://via.placeholder.com/300x300/1a1a1a/0077ff?text=CF"/>
+</div>
+<div class="team-info">
+<h3>Co-Founder Name</h3>
+<p class="team-title">Co-Founder &amp; CTO</p>
+<p class="team-description">
                             Technical architect and innovation driver behind Neuralif's core platform. With a PhD in 
                             Computer Science and years of experience in distributed systems and AI infrastructure, 
                             they ensure our technology remains at the cutting edge of what's possible in 
                             data intelligence.
                         </p>
-                    </div>
-                </div>
-            </div>
-            <div class="back-to-top-section">
-                <a href="#home" class="back-to-top">↑ Back to Top</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section-dark">
-        <div class="container">
-            <h2>Partner With Innovation</h2>
-            <div class="contact-content">
-                <p class="contact-intro">
+</div>
+</div>
+</div>
+<div class="back-to-top-section">
+<a class="back-to-top" href="#home">↑ Back to Top</a>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="section-dark" id="contact">
+<div class="container">
+<h2>Partner With Innovation</h2>
+<div class="contact-content">
+<p class="contact-intro">
                     Ready to revolutionize your data strategy? Join forward-thinking enterprises that are already 
                     leveraging Neuralif's AI-native platform to gain unprecedented competitive advantages.
                 </p>
-
-                <p class="direct-contact-line">
-                    <strong>For direct inquiries, email us at: <span class="email-text">info@neuralif.com</span></strong>
-                </p>
-                
-                <form class="contact-form" action="#" method="POST" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" name="name" id="contactName" placeholder="Full Name" required>
-                        <input type="email" name="email" id="contactEmail" placeholder="Business Email" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" name="company" id="contactCompany" placeholder="Company / Organization" required>
-                        <input type="text" name="role" id="contactRole" placeholder="Your Role / Title">
-                    </div>
-                    <textarea name="message" id="contactMessage" placeholder="Describe your data intelligence challenges and objectives..." required></textarea>
-                    <button type="submit" class="submit-btn">Send Message to Neuralif</button>
-                </form>
-
-                <div class="back-to-top-section">
-                    <a href="#home" class="back-to-top">↑ Back to Top</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="footer-logo">Neuralif</div>
-                    <div style="color: #64748b;">AI-Native Intelligence</div>
-                </div>
-                <div class="footer-links">
-                    <a href="#products">Products</a>
-                    <a href="#video">Video</a>
-                    <a href="#team">Team</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="copyright">
-                    <p>&copy; 2025 Neuralif. All rights reserved. | Pioneering Autonomous Intelligence</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script>
+<p class="direct-contact-line">
+<strong>For direct inquiries, email us at: <span class="email-text">info@neuralif.com</span></strong>
+</p>
+<form action="#" class="contact-form" id="contactForm" method="POST">
+<div class="form-group">
+<input id="contactName" name="name" placeholder="Full Name" required="" type="text"/>
+<input id="contactEmail" name="email" placeholder="Business Email" required="" type="email"/>
+</div>
+<div class="form-group">
+<input id="contactCompany" name="company" placeholder="Company / Organization" required="" type="text"/>
+<input id="contactRole" name="role" placeholder="Your Role / Title" type="text"/>
+</div>
+<textarea id="contactMessage" name="message" placeholder="Describe your data intelligence challenges and objectives..." required=""></textarea>
+<button class="submit-btn" type="submit">Send Message to Neuralif</button>
+</form>
+<div class="back-to-top-section">
+<a class="back-to-top" href="#home">↑ Back to Top</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-brand">
+<div class="footer-logo">Neuralif</div>
+<div style="color: #64748b;">AI-Native Intelligence</div>
+</div>
+<div class="footer-links">
+<a href="#products">Products</a>
+<a href="#video">Video</a>
+<a href="#team">Team</a>
+<a href="#contact">Contact</a>
+</div>
+<div class="copyright">
+<p>© 2025 Neuralif. All rights reserved. | Pioneering Autonomous Intelligence</p>
+</div>
+</div>
+</div>
+</footer>
+<script>
         // Enhanced smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
