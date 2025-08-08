@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEURALif – AI‑Powered Data Analytics Platform</title>
+<style>* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 20px;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a4a4a;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #0077ff;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 119, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(0, 119, 255, 0.02) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+        }
+
+        .hero-content .tagline {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            color: #666666;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-content .description {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            color: #4a4a4a;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            letter-spacing: 0.02em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-primary {
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            color: #ffffff;
+            box-shadow: 0 8px 32px rgba(0, 119, 255, 0.25);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 119, 255, 0.35);
+        }
+
+        .cta-secondary {
+            background: #ffffff;
+            color: #1a1a1a;
+            border: 2px solid #e0e0e0;
+        }
+
+        .cta-secondary:hover {
+            background: #f8f9fa;
+            border-color: #0077ff;
+            color: #0077ff;
+        }
+
+        /* Sections */
+        section {
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .section-white {
+            background: #ffffff;
+        }
+
+        .section-light {
+            background: #f8f9fa;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .section-black {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #1a1a1a;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+        }
+
+        .section-black h2 {
+            background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #0077ff, transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 119, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 119, 255, 0.15);
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #666666;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        /* Team Section Styles */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .team-card {
+            background: #ffffff;
+            padding: 3rem 2.5rem;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .team-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #0077ff, transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 119, 255, 0.2);
+            box-shadow: 0 20px 60px rgba(0, 119, 255, 0.15);
+        }
+
+        .team-card:hover::before {
+            opacity: 1;
+        }
+
+        .team-photo {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid rgba(0, 119, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .team-card:hover .team-photo {
+            border-color: rgba(0, 119, 255, 0.6);
+            transform: scale(1.05);
+        }
+
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        .team-title {
+            color: #0077ff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .team-description {
+            color: #666666;
+            line-height: 1.7;
+            font-size: 1rem;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-intro {
+            font-size: 1.3rem;
+            color: #4a4a4a;
+            margin-bottom: 3rem;
+            line-height: 1.7;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 2rem;
+            margin: 3rem 0;
+            text-align: left;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        input, textarea {
+            padding: 18px 24px;
+            background: #ffffff;
+            border: 2px solid #e0e0e0;
+            border-radius: 16px;
+            color: #1a1a1a;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: #0077ff;
+            box-shadow: 0 0 0 3px rgba(0, 119, 255, 0.1);
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #999999;
+        }
+
+        textarea {
+            grid-column: 1 / -1;
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #0077ff, #00d4ff);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.02em;
+            justify-self: center;
+            box-shadow: 0 8px 32px rgba(0, 119, 255, 0.25);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(0, 119, 255, 0.35);
+        }
+
+        .direct-contact-line {
+            color: #4a4a4a;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .email-text {
+            color: #0077ff;
+        }
+
+        /* Footer */
+        footer {
+            background: #000000;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00d4ff, #0077ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 3rem;
+        }
+
+        .footer-links a {
+            color: #999999;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #00d4ff;
+        }
+
+        .copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #666666;
+        }
+
+        /* Back to Top Styles */
+        .back-to-top-section {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .section-black .back-to-top-section {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .back-to-top {
+            display: inline-block;
+            color: #0077ff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 12px 24px;
+            border: 2px solid #0077ff;
+            border-radius: 50px;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background: #0077ff;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 119, 255, 0.25);
+        }
+
+        /* Video Section */
+        .video-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-container {
+            position: relative;
+            width: 80%;
+            max-width: 1000px;
+            aspect-ratio: 16 / 9;
+            margin-bottom: 2rem;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-section ul {
+            list-style: disc;
+            margin: 2rem auto;
+            max-width: 900px;
+            text-align: left;
+            color: #4a4a4a;
+            line-height: 1.8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 30px;
+            }
+            
+            .team-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.2rem;
+            }
+
+            .hero-content .description {
+                font-size: 1.1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                max-width: 280px;
+                font-size: 0.9rem;
+                padding: 14px 24px;
+            }
+
+            h2 {
+                font-size: 2.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-card {
+                padding: 2.5rem 2rem;
+            }
+
+            .team-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .form-group {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-links {
+                justify-content: center;
+            }
+
+            section {
+                padding: 80px 0;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Loading animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-content > * {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .hero-content h1 { animation-delay: 0.2s; }
+        .hero-content .tagline { animation-delay: 0.4s; }
+        .hero-content .description { animation-delay: 0.6s; }
+        .hero-content .cta-buttons { animation-delay: 0.8s; }
+
+        /* Scroll animations */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            animation: slideUp 0.6s ease forwards;
+        }
+    </style>
+</head>
+<body>
+<!-- Navigation -->
+<nav>
+<div class="container">
+<a class="logo" href="#home">NEURALif</a>
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#products">Products</a></li>
+<li><a href="#video">Why NEURALif</a></li>
+<li><a href="#team">Team</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero" id="home">
+<div class="container">
+<div class="hero-content">
+<h1>NEURALif</h1>
+<p class="tagline">AI‑Powered Data Analytics Platform for Fast, Confident Decisions</p>
+<p class="description">NEURALif cuts analytics spend and dependency on scarce experts. Ask in plain English and get trusted answers, dashboards, and forecasts in minutes, not weeks. With plug‑and‑play modules, a junior analyst can deliver work that previously required a full data and ML team. Fewer hand‑offs, lower costs, and dramatically faster decisions.</p>
+<div class="cta-buttons">
+<a class="cta-button cta-primary" href="#video">Why Choose NEURALif</a>
+<a class="cta-button cta-primary" href="#products">Discover Our Offerings</a>
+<a class="cta-button cta-primary" href="#contact">Request Product Demo</a>
+<a class="cta-button cta-primary" href="#team">Meet the Team</a>
+</div>
+</div>
+<div class="back-to-top-section">
+<a class="back-to-top" href="#home">↑ Back to Top</a>
+</div>
+</div>
+</section>
+<!-- Video Section -->
+<section class="section-light" id="video">
+<div class="container">
+<h2>Why Choose NEURALif</h2>
+<div class="video-section">
+<div class="video-container">
+<iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" frameborder="0" src="https://www.youtube.com/embed/1kx17Ae66Kg" title="NEURALif Product Overview">
+</iframe>
+</div>
+<ul>
+<li>Intuitive, step‑by‑step UX that guides non‑experts to the right answer.</li>
+<li>End‑to‑end analytics in one place—explore, analyze, visualize, and predict.</li>
+<li>From weeks to minutes: a junior analyst can do the work of a full team.</li>
+</ul>
+</div>
+<div class="back-to-top-section">
+<a class="back-to-top" href="#home">↑ Back to Top</a>
+</div>
+</div>
+</section>
+<!-- Products Section -->
+<section class="section-white" id="products">
+<div class="container">
+<h2>Our Products</h2>
+<div class="services-grid">
+<div class="service-card">
+<div class="service-icon">💬</div>
+<h3>Natural Language Insights</h3>
+<p>Ask business questions in plain English and get data, metrics, and explanations in seconds</p>
+</div>
+<div class="service-card">
+<div class="service-icon">📊</div>
+<h3>Auto‑Generated Dashboards</h3>
+<p>Describe the KPI you want and instantly get a ready‑to‑use, shareable dashboard that updates on a cadence you choose.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">🧩</div>
+<h3>Plug‑and‑Play Analytics Modules</h3>
+<p>Drop in your tables to run full analyses, cohort analysis, competitor analysis, A/B tests, call transcript insights, and more.</p>
+</div>
+<div class="service-card">
+<div class="service-icon">📈</div>
+<h3>Predictive Modeling</h3>
+<p>Forecast revenue, demand, and churn with advanced ML, plug‑and‑play; a junior analyst can deliver what once required a team of machine learning experts.</p>
+</div>
+</div>
+<div class="back-to-top-section">
+<a class="back-to-top" href="#home">↑ Back to Top</a>
+</div>
+</div>
+</section>
+<!-- Team Section -->
+<section class="section-light" id="team">
+<div class="container">
+<h2>Meet Our Founders</h2>
+<div class="team-grid">
+<div class="team-card">
+<div class="team-photo">
+<img alt="Kanak Agrawal" src="https://img-c.udemycdn.com/user/200_H/277877287_d424.jpg"/>
+</div>
+<div class="team-info">
+<h3>Kanak Agrawal</h3>
+<p class="team-title">Co‑Founder &amp; CEO</p>
+<p class="team-description">Data Science and AI leader with deep expertise in predictive analytics, machine learning, and business intelligence. Over 6 years of experience applying advanced analytics to solve complex business challenges at PayPal and Capital One. Holds an MS in Quantitative Management (Business Analytics – Finance) from Duke University and dual degrees from IIT Kharagpur.</p>
+</div>
+</div>
+<div class="team-card">
+<div class="team-photo">
+<img alt="Sivanesh Manoharan" src="https://media.licdn.com/dms/image/v2/D5603AQGP94vHT7nQiA/profile-displayphoto-shrink_200_200/B56ZWJeZtOHsAY-/0/1741768203723?e=1757548800&amp;v=beta&amp;t=pr8mexFHHLpf6KGfc5JjcOL6rJFcYYcBE2lxBGTodmo"/>
+</div>
+<div class="team-info">
+<h3>Sivanesh Manoharan</h3>
+<p class="team-title">Co‑Founder &amp; CTO</p>
+<p class="team-description">Expert in AI, software development, and building large‑scale, high‑performance platforms. Senior Software Engineer at Motive (formerly KeepTruckin) with a proven track record of designing and scaling AI‑driven systems to serve enterprise needs with speed, reliability, and precision.</p>
+</div>
+</div>
+</div>
+<div class="back-to-top-section">
+<a class="back-to-top" href="#home">↑ Back to Top</a>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="section-white" id="contact">
+<div class="container">
+<h2>Partner With Innovation</h2>
+<div class="contact-content">
+<p class="contact-intro">
+Ready to revolutionize your data strategy? Join forward-thinking enterprises that are already 
+leveraging NEURALif's AI-native platform to gain unprecedented competitive advantages.
+</p>
+<p class="direct-contact-line">
+<strong>For direct inquiries, email us at: <span class="email-text">info@neuralif.com</span></strong>
+</p>
+<form action="#" class="contact-form" id="contactForm" method="POST">
+<div class="form-group">
+<input id="contactName" name="name" placeholder="Full Name" required="" type="text"/>
+<input id="contactEmail" name="email" placeholder="Business Email" required="" type="email"/>
+</div>
+<div class="form-group">
+<input id="contactCompany" name="company" placeholder="Company / Organization" required="" type="text"/>
+<input id="contactRole" name="role" placeholder="Your Role / Title" type="text"/>
+</div>
+<textarea id="contactMessage" name="message" placeholder="Describe your data intelligence challenges and objectives..." required=""></textarea>
+<button class="submit-btn" type="submit">Send Message to NEURALif</button>
+</form>
+<div class="back-to-top-section">
+<a class="back-to-top" href="#home">↑ Back to Top</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="footer-content">
+<div class="footer-brand">
+<div class="footer-logo">NEURALif</div>
+<div style="color: #666666;">AI-Native Intelligence</div>
+</div>
+<div class="footer-links">
+<a href="#products">Products</a>
+<a href="#video">Video</a>
+<a href="#team">Team</a>
+<a href="#contact">Contact</a>
+</div>
+<div class="copyright">
+<p>© 2025 NEURALif. All rights reserved. | Pioneering Autonomous Intelligence</p>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Enhanced smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Enhanced form submission with email functionality
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('contactName').value;
+            const email = document.getElementById('contactEmail').value;
+            const company = document.getElementById('contactCompany').value;
+            const role = document.getElementById('contactRole').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            // Create email body
+            const emailBody = `Hello Kanak,
+
+I am reaching out regarding NEURALif's AI-Native Data Intelligence Platform.
+
+CONTACT DETAILS:
+Name: ${name}
+Email: ${email}
+Company: ${company}
+Role/Title: ${role}
+
+MESSAGE:
+${message}
+
+I look forward to hearing from you.
+
+Best regards,
+${name}`;
+
+            // Create email subject
+            const subject = `Business Inquiry from ${name} - ${company}`;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:info@neuralif.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            const btn = this.querySelector('.submit-btn');
+            const originalText = btn.textContent;
+            
+            btn.textContent = 'Opening Email Client...';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            
+            setTimeout(() => {
+                btn.textContent = originalText;
+                btn.style.background = 'linear-gradient(135deg, #0077ff, #00d4ff)';
+                this.reset();
+            }, 2000);
+        });
+
+        // Enhanced navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 1)';
+                nav.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.05)';
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Add subtle parallax effect to hero
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Add typing effect to hero tagline
+        const tagline = document.querySelector('.hero-content .tagline');
+        const originalText = tagline.textContent;
+        
+        function typeWriter(element, text, speed = 100) {
+            element.textContent = '';
+            let i = 0;
+            const timer = setInterval(() => {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(timer);
+                }
+            }, speed);
+        }
+
+        // Start typing effect after hero loads
+        setTimeout(() => {
+            typeWriter(tagline, originalText, 80);
+        }, 1000);
+    </script>
+</body>
+</html>
